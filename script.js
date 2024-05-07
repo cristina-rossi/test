@@ -3,14 +3,20 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     var newWindow = window.open('', 'myWindow', 'width=400,height=400');
 
         console.log("hi3");
-    // Load content into the new window only after it has fully loaded
-    newWindow.onload = function() {
-        console.log("hi");
+
+
+     // Wait for a brief moment to ensure the new window is fully initialized
+    setTimeout(function() {
         // Populate the new window with content from contentScript.html
+        console.log("hi1");
         fetch('contentScript.html')
             .then(response => response.text())
             .then(html => {
                 newWindow.document.write(html);
             });
-    };
+    }, 100);
+
+
+    
+    
 });
