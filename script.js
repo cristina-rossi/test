@@ -2,6 +2,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
     // Open a new window with the specified title
     var newWindow = window.open('', 'myWindow', 'width=400,height=400');
 
+        console.log("hi3");
     // Load content into the new window only after it has fully loaded
     newWindow.onload = function() {
         console.log("hi");
