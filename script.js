@@ -4,6 +4,7 @@ document.getElementById('openWindowBtn').addEventListener('click', function() {
 
     // Load content into the new window only after it has fully loaded
     newWindow.onload = function() {
+        console.log("hi");
         // Populate the new window with content from contentScript.html
         fetch('contentScript.html')
             .then(response => response.text())
